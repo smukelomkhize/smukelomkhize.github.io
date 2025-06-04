@@ -87,3 +87,23 @@ window.addEventListener("scroll", () => {
   const width = (scrollTop / scrollHeight) * 100;
   scrollBar.style.width = `${width}%`;
 });
+
+const navLinks = document.querySelectorAll("nav a");
+const sections = document.querySelectorAll("main section");
+
+navLinks.forEach(link => {
+  link.addEventListener("click", e => {
+    e.preventDefault();
+    const targetId = link.getAttribute("data-target");
+
+    sections.forEach(section => {
+      if (section.id === targetId) {
+        section.classList.add("active-section");
+        section.classList.remove("hidden-section");
+      } else {
+        section.classList.remove("active-section");
+        section.classList.add("hidden-section");
+      }
+    });
+  });
+});
