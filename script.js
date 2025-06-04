@@ -33,22 +33,57 @@ function loop() {
 loop();
 
 // Fade-in on scroll
-const sections = document.querySelectorAll("section");
-window.addEventListener("scroll", () => {
-  const triggerBottom = window.innerHeight * 0.8;
-  sections.forEach(section => {
-    const boxTop = section.getBoundingClientRect().top;
-    if (boxTop < triggerBottom) {
-      section.classList.add("visible");
-    } else {
-      section.classList.remove("visible");
+const sectionTitles = document.querySelectorAll("section h2");
+
+function revealTitlesOnScroll() {
+  const triggerBottom = window.innerHeight * 0.85;
+  sectionTitles.forEach(title => {
+    const titleTop = title.getBoundingClientRect().top;
+    if (titleTop < triggerBottom) {
+      title.classList.add("slide-in");
     }
   });
-});
+}
+window.addEventListener("scroll", revealTitlesOnScroll);
+revealTitlesOnScroll(); // run once on load
+
 
 // Theme Toggle
 const toggleBtn = document.getElementById("toggle-theme");
 toggleBtn.addEventListener("click", () => {
   document.body.classList.toggle("light");
   toggleBtn.textContent = document.body.classList.contains("light") ? "🌞" : "🌙";
+});
+// Smooth scroll on nav link click
+document.querySelectorAll("nav a").forEach(anchor => {
+  anchor.addEventListener("click", function(e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute("href"));
+    target.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+});
+
+const cards = document.querySelectorAll(".card");
+
+function animateCards() {
+  const triggerBottom = window.innerHeight * 0.85;
+  cards.forEach((card, idx) => {
+    const boxTop = card.getBoundingClientRect().top;
+    if (boxTop < triggerBottom) {
+      card.style.transitionDelay = `${idx * 150}ms`;
+      card.classList.add("show-card");
+    }
+  });
+}
+
+window.addEventListener("scroll", animateCards);
+animateCards();
+
+// Scroll Progress Bar
+window.addEventListener("scroll", () => {
+  const scrollBar = document.getElementById("scroll-bar");
+  const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const scrollTop = window.scrollY;
+  const width = (scrollTop / scrollHeight) * 100;
+  scrollBar.style.width = `${width}%`;
 });
