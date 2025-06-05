@@ -3,51 +3,52 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Smukelo Mkhize | Portfolio</title>
+  <title>Smukelo Mkhize | Home</title>
   <link rel="stylesheet" href="style.css" />
   <script defer src="script.js"></script>
-
 </head>
 <body>
-  <div id="scroll-bar"></div>
-
-  <header>
-    <h1>Smukelo Mkhize</h1>
-    <p><span id="typed-text"></span><span id="cursor">|</span></p>
-   <nav>
-  <a href="#" data-target="projects">Projects</a>
-  <a href="#" data-target="about">About</a>
-  <a href="#" data-target="contact">Contact</a>
-</nav>
-
+  <!-- Home Page -->
+  <header class="hero">
+    <div class="hero-content">
+      <h1>Smukelo Mkhize</h1>
+      <h2>Frontend Developer</h2>
+      <p>Creating modern, responsive, and user-friendly websites.</p>
+      <button onclick="scrollToSection('contact')">Contact Me</button>
+    </div>
   </header>
 
-  <section id="projects" class="active-section"> ... </section>
-    <h2>Projects</h2>
+  <section id="projects">
+    <h2>Featured Projects</h2>
     <div class="card">
       <h3>Project One</h3>
-      <p>Description of your awesome project.</p>
+      <p>A web application built using React and Firebase.</p>
+      <span>React, Firebase, CSS</span>
       <a href="#">View Project</a>
     </div>
     <div class="card">
       <h3>Project Two</h3>
-      <p>Another cool thing you built.</p>
+      <p>Portfolio website for a local designer.</p>
+      <span>HTML, CSS, JavaScript</span>
       <a href="#">View Project</a>
     </div>
   </section>
 
-  <section id="about" class="hidden-section"> ... </section>
-    <h2>About Me</h2>
+  <!-- About Page -->
+  <section id="about">
+    <h2>About Smukelo Mkhize</h2>
     <p>
-      Hi! I'm a passionate developer who loves building cool stuff with code.
-      Let's work together!
+      I'm a passionate frontend developer with a background in crafting responsive, high-quality user experiences. I specialize in turning design ideas into beautiful, functional web pages using technologies like HTML, CSS, and JavaScript. My attention to detail and drive for quality make me stand out in a competitive field.
     </p>
   </section>
 
-  <section id="contact" class="hidden-section"> ... </section>
+  <!-- Contact Page -->
+  <section id="contact">
     <h2>Contact</h2>
     <p>Email: <a href="mailto:smukelomkhize1@gmail.com">smukelomkhize1@gmail.com</a></p>
     <p>GitHub: <a href="https://github.com/smukelomkhize" target="_blank">@smukelomkhize</a></p>
+    <p>LinkedIn: <a href="#">linkedin.com/in/smukelo</a></p>
+    <a href="Smukelo_Mkhize_CV.pdf" download>Download CV</a>
   </section>
 
   <footer>
