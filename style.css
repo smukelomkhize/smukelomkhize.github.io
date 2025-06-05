@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -5,175 +7,101 @@
 }
 
 body {
-  font-family: 'Segoe UI', sans-serif;
+  font-family: 'Orbitron', sans-serif;
+  background-color: #0a0a0a;
+  color: white;
   line-height: 1.6;
-  background-color: #0f172a;
-  color: #f8fafc;
-  padding: 2rem;
 }
 
-header {
+#container {
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 100vh;
+}
+
+#sidebar {
+  flex: 1;
+  min-width: 300px;
+  background: linear-gradient(180deg, #2b003b, #0f0017);
+  padding: 32px;
   text-align: center;
-  margin-bottom: 2rem;
 }
 
-header h1 {
-  font-size: 3rem;
-  margin-bottom: 0.5rem;
-}
-
-header p {
-  font-size: 1.2rem;
-  color: #94a3b8;
-}
-
-nav {
-  margin-top: 1rem;
-}
-
-nav a {
-  margin: 0 1rem;
-  color: #38bdf8;
-  text-decoration: none;
-}
-
-nav a:hover {
-  text-decoration: underline;
-}
-
-section {
-  margin: 2rem 0;
-}
-
-.card {
-  background: #1e293b;
-  padding: 1rem;
-  margin: 1rem 0;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-}
-
-.card h3 {
-  margin-bottom: 0.5rem;
-}
-
-.card a {
-  color: #38bdf8;
-  text-decoration: none;
-}
-
-footer {
-  text-align: center;
-  margin-top: 4rem;
-  color: #64748b;
-}
-
-/* Typing Animation Cursor */
-#cursor {
-  display: inline-block;
-  animation: blink 0.7s infinite;
-}
-
-@keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
-}
-
-/* Fade-in Sections */
-section {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.6s ease-out;
-}
-
-section.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Theme Toggle Button */
-#toggle-theme {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: #1e293b;
-  color: #f8fafc;
-  border: none;
-  padding: 0.7rem 1rem;
-  font-size: 1.2rem;
+#profile-img {
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
-  cursor: pointer;
-  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  object-fit: cover;
+  margin-bottom: 16px;
+  border: 3px solid #7900ff;
 }
 
-/* Light Mode Styles */
-body.light {
-  background-color: #f8fafc;
-  color: #1e293b;
+#contact-box,
+#education-box {
+  background-color: #1c0129;
+  padding: 16px;
+  border-radius: 10px;
+  margin-bottom: 24px;
+  box-shadow: 0 0 15px rgba(111, 0, 255, 0.4);
+  text-align: left;
 }
 
-body.light .card {
-  background: #e2e8f0;
-  color: #1e293b;
+#contact-box h3,
+#education-box h3 {
+  margin-bottom: 12px;
+  color: #ff00d4;
 }
 
-body.light nav a,
-body.light .card a {
-  color: #2563eb;
+#education-box ul {
+  list-style-type: none;
+  padding-left: 0;
 }
 
-body.light footer {
-  color: #334155;
+#education-box li {
+  margin-bottom: 16px;
+  font-size: 14px;
 }
 
-body.light #toggle-theme {
-  background: #e2e8f0;
-  color: #1e293b;
+#main {
+  flex: 2;
+  padding: 32px;
+  background-color: #0a0a0a;
 }
 
-/* Slide-in Animation */
-@keyframes slideIn {
-  from {
-    opacity: 0;
-    transform: translateX(-50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+#name {
+  font-size: 48px;
+  color: #ffffff;
+  margin-bottom: 16px;
 }
 
-.slide-in {
-  animation: slideIn 0.6s ease-out forwards;
-}
-.card {
-  opacity: 0;
-  transform: scale(0.95);
-  transition: all 0.5s ease-out;
+section {
+  margin-bottom: 32px;
 }
 
-.card.show-card {
-  opacity: 1;
-  transform: scale(1);
+#title-about,
+#title-experience,
+#title-skills {
+  background: linear-gradient(to right, #ff00cc, #3333ff);
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 10px;
+  margin-bottom: 16px;
+  font-size: 18px;
 }
 
-#scroll-bar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 4px;
-  background: #38bdf8;
-  width: 0%;
-  z-index: 999;
-}
-.hidden-section {
-  display: none;
-  opacity: 0;
-  transition: opacity 0.4s ease;
+#skills-list {
+  list-style-type: none;
+  padding-left: 0;
 }
 
-.active-section {
-  display: block;
-  opacity: 1;
+#skills-list li {
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
+.dots {
+  color: #ff00d4;
+  font-size: 18px;
+}
